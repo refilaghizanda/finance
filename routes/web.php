@@ -43,6 +43,7 @@ Route::group(['middleware' => 'auth'], function () {
 	})->name('transactions');
 
 	Route::get('kas-kecil', [kaskecilController::class, 'index']);
+	Route::post('kas-kecil', [RegisterController::class, 'store']);
 
 	Route::get('kas-besar', [kasbesarController::class, 'index']);
 

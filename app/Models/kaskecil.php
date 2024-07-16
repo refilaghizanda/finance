@@ -14,9 +14,7 @@ class kaskecil extends Model
         'tanggal',
         'kategori',
         'keterangan',
-        'saldo_awal',
-        'nominal_transaksi',
-        'sisa_saldo',
+        'nominal_transaksi'
     ];
 
     // Define relationship with User model (assuming a User model exists)

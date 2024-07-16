@@ -10,7 +10,7 @@
                             <div class="numbers">
                                 <p class="text-sm mt-4 mb-0 text-capitalize font-weight-bold">Saldo Maximum Kas Kecil</p>
                                 <h5 class="font-weight-bolder mt-3 mb-4">
-                                    Rp. 2000.000
+                                    Rp 2.000.000
                                 </h5>
                             </div>
                         </div>
@@ -42,8 +42,6 @@
 
                     <div class="row">
                         <div class="col-md-4">
-                                    
-
                             <!-- Modal -->
                             <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog"
                                 aria-labelledby="exampleModalLongTitle" aria-hidden="true">
@@ -56,63 +54,40 @@
                                                 <span aria-hidden="true">&times;</span>
                                             </button>
                                         </div>
-                                        <form>
+                                        <form role="form text-left" method="POST" action="kas-kecil">
+                                            @csrf
                                             <div class="form-group mx-4">
-                                                <label for="example-text-input" class="form-control-label">Text</label>
-                                                <input class="form-control" type="text" value="John Snow" id="example-text-input">
-                                            </div>
-                                            <div class="form-group mx-4">
-                                                <label for="example-search-input" class="form-control-label">Search</label>
-                                                <input class="form-control" type="search" value="Tell me your secret ..." id="example-search-input">
-                                            </div>
-                                            <div class="form-group mx-4">
-                                                <label for="example-email-input" class="form-control-label">Email</label>
-                                                <input class="form-control" type="email" value="@example.com" id="example-email-input">
-                                            </div>
-                                            <div class="form-group mx-4">
-                                                <label for="example-url-input" class="form-control-label">URL</label>
-                                                <input class="form-control" type="url" value="" id="example-url-input">
-                                            </div>
-                                            <div class="form-group mx-4">
-                                                <label for="example-tel-input" class="form-control-label">Phone</label>
-                                                <input class="form-control" type="tel" value="40-(770)-888-444" id="example-tel-input">
-                                            </div>
-                                            <div class="form-group mx-4">
-                                                <label for="example-password-input" class="form-control-label">Password</label>
-                                                <input class="form-control" type="password" value="password" id="example-password-input">
-                                            </div>
-                                            <div class="form-group mx-4">
-                                                <label for="example-number-input" class="form-control-label">Number</label>
-                                                <input class="form-control" type="number" value="23" id="example-number-input">
-                                            </div>
-                                            <div class="form-group mx-4">
-                                                <label for="example-datetime-local-input" class="form-control-label">Datetime</label>
-                                                <input class="form-control" type="datetime-local" value="2018-11-23T10:30:00" id="example-datetime-local-input">
+                                                <label for="example-text-input" class="form-control-label">No Bukti</label>
+                                                <input class="form-control" type="text" value=" " id="example-text-input">
                                             </div>
                                             <div class="form-group mx-4">
                                                 <label for="example-date-input" class="form-control-label">Date</label>
-                                                <input class="form-control" type="date" value="2018-11-23" id="example-date-input">
+                                                <input class="form-control" type="date" value="today" id="example-date-input" placeholder="dd/mm/yyyy">
                                             </div>
                                             <div class="form-group mx-4">
-                                                <label for="example-month-input" class="form-control-label">Month</label>
-                                                <input class="form-control" type="month" value="2018-11" id="example-month-input">
+                                                <label for="example-search-input" class="form-control-label">Kategori</label>
+                                                <select class="form-control">
+                                                    <option>Pilih Kategori</option>
+                                                    <option>Konsumsi</option>
+                                                    <option>Lainnya</option>
+                                                </select>
                                             </div>
                                             <div class="form-group mx-4">
-                                                <label for="example-week-input" class="form-control-label">Week</label>
-                                                <input class="form-control" type="week" value="2018-W23" id="example-week-input">
+                                                <label for="exampleFormControlTextarea1">Keterangan</label>
+                                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="2"></textarea>
                                             </div>
                                             <div class="form-group mx-4">
-                                                <label for="example-time-input" class="form-control-label">Time</label>
-                                                <input class="form-control" type="time" value="10:30:00" id="example-time-input">
+                                                <label for="example-sal-input" class="form-control-label">Saldo</label>
+                                                <input class="form-control" type="sal" value="Rp. 2000.000" id="example-sal-input">
                                             </div>
                                             <div class="form-group mx-4">
-                                                <label for="example-color-input" class="form-control-label">Color</label>
-                                                <input class="form-control" type="color" value="#5e72e4" id="example-color-input">
+                                                <label for="example-nom-input" class="form-control-label">Nominal</label>
+                                                <input class="form-control" type="nom" value=" " id="example-nom-input">
                                             </div>
                                         </form>
                                         <div class="modal-footer">
                                             <button type="button" class="btn bg-gradient-secondary"
-                                                data-bs-dismiss="modal">Close</button>
+                                                data-bs-dismiss="modal">Cancel</button>
                                             <button type="button" class="btn bg-gradient-primary">Save changes</button>
                                         </div>
                                     </div>
@@ -144,18 +119,18 @@
                                                 class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                                 Keterangan
                                             </th>
-                                            <th
+                                            {{-- <th
                                                 class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                                 Saldo Awal
-                                            </th>
+                                            </th> --}}
                                             <th
                                                 class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                                 Nominal
                                             </th>
-                                            <th
+                                            {{-- <th
                                                 class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                                 Sisa Saldo
-                                            </th>
+                                            </th> --}}
                                             <th
                                                 class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                                 Aksi
@@ -173,7 +148,7 @@
                                                         class="text-xs font-weight-bold mb-0">{{ $kaskecil->no_bukti }}</span>
                                                 </td>
                                                 <td class="text-center">
-                                                    <p class="text-xs font-weight-bold mb-0">{{ $kaskecil->tanggal }}</p>
+                                                    <p class="text-xs font-weight-bold mb-0">{{ date('d-m-Y', strtotime($kaskecil->tanggal)) }}</p>
                                                 </td>
                                                 <td class="text-center">
                                                     <p class="text-xs font-weight-bold mb-0">{{ $kaskecil->kategori }}</p>
@@ -181,16 +156,15 @@
                                                 <td class="text-center">
                                                     <p class="text-xs font-weight-bold mb-0">{{ $kaskecil->keterangan }}</p>
                                                 </td>
-                                                <td class="text-center">
+                                                {{-- <td class="text-center">
                                                     <p class="text-xs font-weight-bold mb-0">{{ $kaskecil->saldo_awal }}</p>
-                                                </td>
+                                                </td> --}}
                                                 <td class="text-center">
-                                                    <p class="text-xs font-weight-bold mb-0">
-                                                        {{ $kaskecil->nominal_transaksi }}</p>
+                                                    <p class="text-xs font-weight-bold mb-0">Rp {{ number_format ($kaskecil->nominal_transaksi, 0, '.', '.') }}</p>
                                                 </td>
-                                                <td class="text-center">
+                                                {{-- <td class="text-center">
                                                     <p class="text-xs font-weight-bold mb-0">{{ $kaskecil->sisa_saldo }}</p>
-                                                </td>
+                                                </td> --}}
                                                 <td class="text-center">
                                                     <a href="#" class="mx-3" data-bs-toggle="tooltip"
                                                         data-bs-original-title="Edit user">

@@ -14,6 +14,7 @@ class RegisterController extends Controller
         return view('session.register');
     }
 
+    // requirements menambahkan data pengguna saat register
     public function store()
     {
         $attributes = request()->validate([
