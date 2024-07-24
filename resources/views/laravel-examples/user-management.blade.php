@@ -38,32 +38,36 @@
                                     </th>
                                 </tr>
                             </thead>
+                            <?php
+                            $nomer = 1;
+                            ?>
                             @foreach ($data as $d)
-                            <tbody>
-                                <tr>
-                                    <td class="ps-4">
-                                        <p class="text-xs font-weight-bold mb-0">{{ $d->id }}</p>
-                                    </td>
-                                    <td class="text-center">
-                                        <p class="text-xs font-weight-bold mb-0">{{ $d->name }}</p>
-                                    </td>
-                                    <td class="text-center">
-                                        <p class="text-xs font-weight-bold mb-0">{{ $d->email }}</p>
-                                    </td>
-                                    <td class="text-center">
-                                        <span class="text-secondary text-xs font-weight-bold">{{ $d->created_at->format('d-m-y') }}</span>
-                                    </td>
-                                    <td class="text-center">
-                                        <a href="#" class="mx-3" data-bs-toggle="tooltip"
-                                            data-bs-original-title="Edit user">
-                                            <i class="fas fa-user-edit text-secondary"></i>
-                                        </a>
-                                        <span>
-                                            <i class="cursor-pointer fas fa-trash text-secondary"></i>
-                                        </span>
-                                    </td>
-                                </tr>
-                            </tbody>
+                                <tbody>
+                                    <tr>
+                                        <td class="ps-4">
+                                            <p class="text-xs font-weight-bold mb-0">{{ $nomer++ }}</p>
+                                        </td>
+                                        <td class="text-center">
+                                            <p class="text-xs font-weight-bold mb-0">{{ $d->name }}</p>
+                                        </td>
+                                        <td class="text-center">
+                                            <p class="text-xs font-weight-bold mb-0">{{ $d->email }}</p>
+                                        </td>
+                                        <td class="text-center">
+                                            <span
+                                                class="text-secondary text-xs font-weight-bold">{{ $d->created_at->format('d-m-y') }}</span>
+                                        </td>
+                                        <td class="text-center">
+                                            <a href="#" class="mx-3" data-bs-toggle="tooltip"
+                                                data-bs-original-title="Edit user">
+                                                <i class="fas fa-user-edit text-secondary"></i>
+                                            </a>
+                                            <span>
+                                                <i class="cursor-pointer fas fa-trash text-secondary"></i>
+                                            </span>
+                                        </td>
+                                    </tr>
+                                </tbody>
                             @endforeach
                         </table>
                     </div>

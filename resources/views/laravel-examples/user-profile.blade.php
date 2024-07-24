@@ -19,11 +19,11 @@
                             </a>
                         </div> --}}
                     </div>
-                @foreach ($data as $profile)
+                
                     <div class="col-auto my-auto">
                         <div class="h-100">
                             <h5 class="mb-1">
-                                {{ $profile->name }}
+                                {{ __(' Refila Dyah Ghizanda Wardoyo') }}
                             </h5>
                             <p class="mb-0 font-weight-bold text-sm">
                                 {{ __(' Administrator') }}
@@ -122,7 +122,6 @@
                             class="btn bg-gradient-dark btn-md mt-4 mb-4">{{ 'Save Changes' }}</button>
                     </div>
                 </form>
-                @endforeach
             </div>
         </div>
     </div>

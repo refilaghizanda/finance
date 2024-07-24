@@ -17,9 +17,7 @@ class kaskecil extends Model
         'nominal_transaksi'
     ];
 
-    // Define relationship with User model (assuming a User model exists)
-    // public function user()
-    // {
-    //     return $this->belongsTo(User::class, 'id');
-    // }
+    protected $rules = [
+        'nominal_transaksi' => 'required|numeric|max:500000',
+    ];
 }

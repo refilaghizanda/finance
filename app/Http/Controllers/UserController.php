@@ -13,4 +13,5 @@ class UserController extends Controller
 
         return view ('laravel-examples/user-management', compact('data'));
     }
+
 }

@@ -14,8 +14,6 @@ class kasbesar extends Model
         'tanggal',
         'kategori',
         'keterangan',
-        'saldo_awal',
-        'nominal_transaksi',
-        'sisa_saldo',
+        'nominal_transaksi'
     ];
 }

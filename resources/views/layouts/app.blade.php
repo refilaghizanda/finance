@@ -14,8 +14,8 @@
         <x-demo-metas></x-demo-metas>
     @endif
 
-    <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/logo.png">
-    <link rel="icon" type="image/png" href="../assets/img/logo.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/ediibaru.png">
+    <link rel="icon" type="image/png" href="../assets/img/ediibaru.png">
     <title>
         FINANCE-EDII
     </title>

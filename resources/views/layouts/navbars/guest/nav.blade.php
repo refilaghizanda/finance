@@ -10,9 +10,16 @@
             </span>
         </button>
         <div class="collapse navbar-collapse" id="navigation">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link me-2" style="display: flex; align-items;">
+                        <img src="{{ asset('/assets/img/pelindoresizebg.png') }}">
+                    </a>
+                </li>
+            </ul>
             <ul class="navbar-nav mx-auto">
                 @if (auth()->user())
-                    <li class="nav-item">
+                    <li class="nav-item mx-auto">
                         <a class="nav-link d-flex align-items-center me-2 active" aria-current="page"
                             href="{{ url('dashboard') }}">
                             <i
@@ -20,7 +27,7 @@
                             Dashboard
                         </a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item mx-auto">
                         <a class="nav-link me-2" href="{{ url('profile') }}">
                             <i
                                 class="fa fa-user opacity-6 me-1 {{ Request::is('static-sign-up') ? '' : 'text-dark' }}"></i>
@@ -43,8 +50,14 @@
                     </a>
                 </li>
             </ul>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link me-2" style="display: flex; align-items;">
+                        <img src="{{ asset('/assets/img/bumn.png') }}">
+                    </a>
+                </li>
+            </ul>
             <ul class="navbar-nav d-lg-block d-none"></ul>
         </div>
     </div>
 </nav>
-

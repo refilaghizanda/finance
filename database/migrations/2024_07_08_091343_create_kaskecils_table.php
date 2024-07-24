@@ -17,9 +17,7 @@ class CreateKaskecilsTable extends Migration
             $table->dateTime('tanggal');
             $table->string('kategori')->nullable();
             $table->text('keterangan');
-            $table->bigInteger('saldo_awal');
             $table->bigInteger('nominal_transaksi');
-            $table->bigInteger('sisa_saldo');
             $table->timestamps();
         });
     }
