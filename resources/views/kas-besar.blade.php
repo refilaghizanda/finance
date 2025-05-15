@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="row">
-        <div class="col-md-4 mb-4 mx-auto">
+        {{-- <div class="col-md-4 mb-4 mx-auto">
             <div class="card">
                 <div class="card-body p-3">
                     <div class="row">
@@ -22,7 +22,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
 
         <div class="col-sm-9 mx-auto mt-1 mb-1">
             @if ($message = Session::get('success'))
@@ -85,19 +85,19 @@
                                             </div>
 
                                             <div class="form-group mx-4">
-                                                <label class="form label" for="keterangan">Keterangan</label>
-                                                <textarea class="form-control" name="keterangan" id="keterangan" rows="2"></textarea>
+                                                <label class="form label" for="keterangan">Kegiatan</label>
+                                                <textarea class="form-control" name="keterangan" id="keterangan" placeholder="Masukkan kegiatan" rows="2"></textarea>
                                             </div>
 
                                             <div class="form-group mx-4">
                                                 <label class="form label" for="saldo">Saldo</label>
-                                                <input type="text" class="form-control disabled" name="saldo" id="saldo" readonly value="2000.000">
+                                                <input type="text" class="form-control disabled" name="saldo" id="saldo" readonly value="Rp. 500.000">
                                             </div>
 
                                             <div class="form-group mx-4">
                                                 <label class="form label" for="nominal">Nominal</label>
-                                                <input type="number" class="form-control" name="nominal" id="nominal"
-                                                    placeholder=" ">
+                                                <input type="number" class="form-control" name="nominal" id="nominal" placeholder="Masukkan nominal" oninput="checkNominalValue(this)">
+                                                <span id="nominal-error" style="color: grey; font-size: 0.8em;"></span>
                                             </div>
 
                                             <div class="modal-footer">
@@ -129,7 +129,7 @@
                                 Kategori
                             </th>
                             <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                Keterangan
+                                Kegiatan
                             </th>
                             <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                 Nominal

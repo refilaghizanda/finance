@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CekKecilController;
 use App\Http\Controllers\ChangePasswordController;
 use App\Http\Controllers\downloadController;
 use App\Http\Controllers\HomeController;
@@ -11,6 +12,7 @@ use App\Http\Controllers\laporanController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\ResetController;
 use App\Http\Controllers\SessionsController;
+use App\Http\Controllers\transactionsController;
 use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 use App\Models\User;
@@ -40,21 +42,23 @@ Route::group(['middleware' => 'auth'], function () {
 
 	Route::get('user-management', [UserController::class, 'index']);
 
-	Route::get('/kas-kecil/{id}', [kaskecilController::class, 'show'])->name('kecil.delete');
-
 	// Route::group(['middleware' => 'auth'], function () {
 	Route::get('download/invoice', [downloadController::class, 'invoice'])->name('invoice.download');
 	Route::get('/download', [downloadController::class, 'index'])->name('download.index');
 
 	Route::get('/invoice', [downloadController::class, 'invoice'])->name('invoice.index');
 	// 	Route::get('download/invoice/pdf', [downloadController::class, 'downloadPdf'])->name('invoice.download.pdf');
-	// });
+	Route::put('/transactions{id}',[CekKecilController::class, 'update'])->name('ck.update');
+	Route::get('/transactions{id}',[CekKecilController::class, 'edit'])->name('ck.edit');
+	Route::delete('/transactions{id}', [CekKecilController::class, 'destroy'])->name('ck.delete');
+	Route::get('/transactions', [CekKecilController::class, 'create'])->name('ck.create');
+	Route::post('/transactions', [CekKecilController::class, 'store'])->name('ck.store');
+	Route::get('/transactions', [CekKecilController::class, 'index'])->name('ck.index');	// });
 
-	Route::get('transactions', function () {
-		return view('transactions');
-	})->name('transactions');
+	// Route::get('transactions', [transactionsController::class, 'index'])->name('index');
 
 	Route::delete('/kas-kecil/{id}', [kaskecilController::class, 'destroy'])->name('kecil.delete');
+	Route::get('/kas-kecil/{id}', [kaskecilController::class, 'show'])->name('kecil.delete');
 	Route::get('/kas-kecil', [kaskecilController::class, 'create'])->name('kecil.create');
 	Route::post('/kas-kecil', [kaskecilController::class, 'store'])->name('kecil.store');
 	Route::get('/kas-kecil', [kaskecilController::class, 'index'])->name('kecil.index');
